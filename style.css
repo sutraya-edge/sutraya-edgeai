@@ -1,0 +1,26 @@
+:root{--bg:#f4f6f9;--fg:#111827;--card:#fff;--mut:#6b7280;--ac:#0f766e;--bd:#d8dee6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1118;--fg:#e5e7eb;--card:#131c27;--mut:#94a3b8;--ac:#2dd4bf;--bd:#243244}}
+:root[data-theme="dark"]{--bg:#0b1118;--fg:#e5e7eb;--card:#131c27;--mut:#94a3b8;--ac:#2dd4bf;--bd:#243244}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;padding:12px}
+h1{font-size:18px;margin:0 0 2px}.s{color:var(--mut);font-size:12px;margin:0 0 10px}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px;margin-bottom:10px}
+canvas{
+    width:80%;
+    max-width:800px;
+    height:auto;
+    display:block;
+    margin:auto;
+    border-radius:8px;
+    background:#0f172a;
+}
+button,select{font:inherit;padding:6px 10px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--fg)}
+button.p{background:var(--ac);color:#fff;border-color:var(--ac)}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:8px}
+.k{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}button.on{background:var(--ac);color:#fff;border-color:var(--ac)}.k div{background:var(--bg);border-radius:8px;padding:6px;text-align:center}.k b{display:block;font-size:16px}.k span{font-size:11px;color:var(--mut)}
+.r{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:12px}.dot{width:12px;height:12px;border-radius:50%}
+.bar{flex:1;height:8px;background:var(--bg);border-radius:4px;overflow:hidden}.bar i{display:block;height:100%}
+#log{font:11px ui-monospace,monospace;color:var(--mut);min-height:70px}
+table{width:100%;border-collapse:collapse;font-size:12px}td,th{padding:4px;border-bottom:1px solid var(--bd);text-align:right}th:first-child,td:first-child{text-align:left}
+details{font-size:12px;color:var(--mut)}
+body.sc .hm{display:none!important}#sh{display:none}body.sc #sh{display:block}

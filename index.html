@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>SUTRAYA – Edge-AI AMR Fleet Coordination</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<h1>SUTRAYA <span style="font-weight:400;color:var(--mut)">· PS 26123</span></h1>
+<p class="s">Serverless P2P fleet coordination: aging-priority space-time reservations, gossip maps, auction tasking.</p>
+<div class="c hm"><b>Scenario pages</b><div class="row" style="margin-top:6px"><button id="gdl">Deadlock scenario →</button><button id="gco">Collision scenario →</button></div><div class="s" style="margin:0">Each one opens its own page with the stop-and-wait vs HiveLane comparison.</div></div>
+<div class="c" id="sh"><div class="row"><button id="bk2">← Back to main page</button></div><b id="st"></b><div class="s" id="sdsc" style="margin:4px 0 0"></div></div>
+<div class="c"><canvas id="cv"></canvas>
+<div class="row" style="margin-top:8px"><button class="p" id="pl">Pause</button><button id="rs">Reset</button>
+<select id="md"><option value="hive">HiveLane (P2P)</option><option value="stop">Stop-and-wait</option></select>
+<select id="sp"><option value="4">Slow</option><option value="10" selected>Normal</option><option value="30">Fast</option></select></div>
+<div class="row"><button class="hm" id="bk">Block random aisle</button><button class="hm" id="kl">Fail a robot</button><button class="hm" id="jm">Traffic jam</button>
+<label class="hm" style="font-size:12px">Robots <select id="nr"><option>3</option><option>4</option><option>5</option><option selected>6</option><option>7</option><option>8</option></select></label><label class="hm" style="font-size:12px">Full-stop cost <select id="ac"><option>0</option><option>1</option><option selected>2</option></select> s</label><label class="hm" style="font-size:12px">Payload kg <select id="cp"><option value="0">0 (1 task)</option><option selected>40</option><option>60</option><option>80</option></select></label><label style="font-size:12px">Packet loss <select id="ls"><option>0</option><option selected>10</option><option>30</option><option>50</option></select>%</label></div>
+<div class="s hm" style="margin:0">Tip: tap the map to block/unblock a cell. Cyan links = robots in radio range. Orange = traffic jam zone that all robots avoid for 9 s (1 tick ≈ 1 s).</div></div>
+<div class="c"><b>Time comparison</b><div class="row" style="margin:6px 0"><button class="p" id="cm">Compare: Stop-and-wait → HiveLane</button></div><div id="cmpo"></div><div class="s" style="margin:6px 0 0">Runs stop-and-wait first, then HiveLane P2P on the same jobs (1 tick = 1 s). Do not press Block/Fail/Jam during a comparison. Model rule for both methods: every full stop costs the selected full-stop cost (default 2 s for braking and re-accelerating), so slowing down instead of stopping saves real time. Set it to 0 to see the result without this assumption.</div></div>
+<div class="c"><div class="k"><div><b id="m1">0</b><span>time (s)</span></div><div><b id="m2">0/28</b><span>delivered</span></div><div><b id="m3">0</b><span>collisions</span></div><div><b id="m4">0</b><span>e-stops</span></div><div><b id="m5">0</b><span>P2P msgs</span></div><div><b id="m6">-</b><span>finished at (s)</span></div><div><b id="m7">0</b><span>stop-starts</span></div><div><b id="m8">0</b><span>slow-downs</span></div><div><b id="m9">0</b><span>2nd tasks</span></div><div><b id="m10">0</b><span>jams shared</span></div><div><b id="m11">0</b><span>jam detours</span></div><div><b id="m12">0</b><span>jam time left (s)</span></div><div><b id="m13">0</b><span>deadlocks</span></div><div><b id="m14">0</b><span>reroutes</span></div><div><b id="m15">0</b><span>distance</span></div></div></div>
+<div class="c"><b>Fleet status</b><div id="fl"></div></div>
+<div class="c"><b>Edge AI · Risk prediction</b><div id="ai"></div></div>
+<div class="c"><b>Task allocation</b><div id="ta"></div></div>
+<div class="c"><b>Coordination events</b><div id="log"></div></div>
+<div class="c hm"><div class="row"><b>Benchmark vs stop-and-wait</b><button class="p" id="bn">Run 10 job sets</button></div><div id="bo" class="s">Same tasks and allocation; only coordination differs.</div></div>
+<div class="c hm"><b>Problem statement checklist</b>
+<table style="margin-top:6px"><tr><th>Requirement</th><th>Where to see it</th></tr>
+<tr><td>3+ AMRs</td><td>6 robots (3 to 8 selectable)</td></tr>
+<tr><td>Decentralized messaging, no server</td><td>Cyan links, "P2P msgs", packet loss and jam warnings</td></tr>
+<tr><td>Deadlocks and choke points</td><td>Slow-downs, "deadlocks" counter, backing out of a gridlock</td></tr>
+<tr><td>Task allocation and re-routing</td><td>Task allocation panel, 2nd tasks, Block aisle, Fail a robot</td></tr>
+<tr><td>Fleet dashboard</td><td>Map and Fleet status table (position, battery, task, urgency, delay)</td></tr>
+<tr><td>Zero collisions</td><td>"collisions" counter</td></tr>
+<tr><td>20% or more faster</td><td>Compare button and Run 10 job sets</td></tr>
+<tr><td>Runs on edge hardware</td><td>Separate Python program (hivelane_node.py): each robot runs its own copy over UDP, no server</td></tr></table>
+<div class="s" style="margin:6px 0 0">This page is a simulation. Robots, radio and sensors are emulated here; the Python edge program is the version for Raspberry Pi / Jetson.</div></div>
+<details class="c"><summary>How it works</summary><p><b>Comms:</b> each robot broadcasts pose, intent (next cells), priority, battery to peers in range; lossy, no server.<br><b>Planning:</b> time-expanded BFS around reservations of higher-priority peers. Priority = load + task + waiting time (aging) + low battery, so nobody starves and deadlocks break by design.<br><b>Choke points:</b> lower priority robots yield or step aside; idle robots clear lanes.<br><b>Re-routing:</b> blocked cells are sensed locally and gossiped; unreachable tasks return to the pool and are re-auctioned; a failed robot is detected and its task reassigned.<br><b>Safety:</b> an onboard proximity layer e-stops any move into an occupied cell, so collisions stay at zero even with packet loss.</p></details>
+<script src="script.js"></script></body></html>
