@@ -1,0 +1,886 @@
+{
+  "model": "HiveLane Edge-AI Decision Tree",
+  "version": 1,
+  "features": [
+    "active_robots",
+    "nearby_robots",
+    "minimum_distance",
+    "predicted_conflicts",
+    "junction_pressure",
+    "head_on_pairs",
+    "average_wait",
+    "max_urgency",
+    "low_battery_ratio",
+    "jammed_cells"
+  ],
+  "classes": [
+    "LOW",
+    "MEDIUM",
+    "HIGH"
+  ],
+  "nodes": [
+    {
+      "leaf": false,
+      "feature": 3,
+      "threshold": 1.5,
+      "left": 1,
+      "right": 60
+    },
+    {
+      "leaf": false,
+      "feature": 9,
+      "threshold": 4.5,
+      "left": 2,
+      "right": 31
+    },
+    {
+      "leaf": false,
+      "feature": 5,
+      "threshold": 0.5,
+      "left": 3,
+      "right": 16
+    },
+    {
+      "leaf": false,
+      "feature": 2,
+      "threshold": 2.5,
+      "left": 4,
+      "right": 9
+    },
+    {
+      "leaf": false,
+      "feature": 4,
+      "threshold": 0.2285662442445755,
+      "left": 5,
+      "right": 6
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.6923076923076923,
+        0.3076923076923077,
+        0.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 1,
+      "threshold": 0.5,
+      "left": 7,
+      "right": 8
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.5384615384615384,
+        0.46153846153846156,
+        0.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.10638297872340426,
+        0.8936170212765957,
+        0.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 4,
+      "threshold": 0.6519172191619873,
+      "left": 10,
+      "right": 13
+    },
+    {
+      "leaf": false,
+      "feature": 1,
+      "threshold": 6.5,
+      "left": 11,
+      "right": 12
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.6666666666666666,
+        0.3333333333333333,
+        0.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 6,
+      "threshold": 6.198184013366699,
+      "left": 14,
+      "right": 15
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.7142857142857143,
+        0.2857142857142857,
+        0.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.21052631578947367,
+        0.7894736842105263,
+        0.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 2,
+      "threshold": 2.5,
+      "left": 17,
+      "right": 24
+    },
+    {
+      "leaf": false,
+      "feature": 4,
+      "threshold": 0.6523289382457733,
+      "left": 18,
+      "right": 21
+    },
+    {
+      "leaf": false,
+      "feature": 1,
+      "threshold": 3.5,
+      "left": 19,
+      "right": 20
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.8333333333333334,
+        0.16666666666666666
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 0,
+      "threshold": 6.5,
+      "left": 22,
+      "right": 23
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.6153846153846154,
+        0.38461538461538464
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.09375,
+        0.90625
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 4,
+      "threshold": 0.6412154734134674,
+      "left": 25,
+      "right": 28
+    },
+    {
+      "leaf": false,
+      "feature": 0,
+      "threshold": 6.5,
+      "left": 26,
+      "right": 27
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.728,
+        0.272,
+        0.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.18699186991869918,
+        0.8130081300813008,
+        0.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 1,
+      "threshold": 3.5,
+      "left": 29,
+      "right": 30
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.8518518518518519,
+        0.14814814814814814
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 2,
+      "threshold": 2.5,
+      "left": 32,
+      "right": 45
+    },
+    {
+      "leaf": false,
+      "feature": 5,
+      "threshold": 0.5,
+      "left": 33,
+      "right": 38
+    },
+    {
+      "leaf": false,
+      "feature": 4,
+      "threshold": 0.8948172926902771,
+      "left": 34,
+      "right": 37
+    },
+    {
+      "leaf": false,
+      "feature": 8,
+      "threshold": 0.6191112399101257,
+      "left": 35,
+      "right": 36
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.75,
+        0.25
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.2727272727272727,
+        0.7272727272727273
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 0,
+      "threshold": 6.5,
+      "left": 39,
+      "right": 42
+    },
+    {
+      "leaf": false,
+      "feature": 4,
+      "threshold": 0.6367944478988647,
+      "left": 40,
+      "right": 41
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.6547619047619048,
+        0.34523809523809523
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 1,
+      "threshold": 3.5,
+      "left": 43,
+      "right": 44
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.13114754098360656,
+        0.8688524590163934
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 4,
+      "threshold": 0.6536321043968201,
+      "left": 46,
+      "right": 53
+    },
+    {
+      "leaf": false,
+      "feature": 5,
+      "threshold": 0.5,
+      "left": 47,
+      "right": 50
+    },
+    {
+      "leaf": false,
+      "feature": 0,
+      "threshold": 6.5,
+      "left": 48,
+      "right": 49
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.7692307692307693,
+        0.23076923076923078,
+        0.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.17777777777777778,
+        0.8222222222222222,
+        0.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 1,
+      "threshold": 7.5,
+      "left": 51,
+      "right": 52
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.9627118644067797,
+        0.03728813559322034
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.4,
+        0.6
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 0,
+      "threshold": 7.5,
+      "left": 54,
+      "right": 57
+    },
+    {
+      "leaf": false,
+      "feature": 6,
+      "threshold": 7.166860818862915,
+      "left": 55,
+      "right": 56
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.6119402985074627,
+        0.3880597014925373
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 5,
+      "threshold": 0.5,
+      "left": 58,
+      "right": 59
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.8947368421052632,
+        0.10526315789473684
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.11428571428571428,
+        0.8857142857142857
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 9,
+      "threshold": 4.5,
+      "left": 61,
+      "right": 92
+    },
+    {
+      "leaf": false,
+      "feature": 4,
+      "threshold": 0.6493970155715942,
+      "left": 62,
+      "right": 77
+    },
+    {
+      "leaf": false,
+      "feature": 2,
+      "threshold": 2.5,
+      "left": 63,
+      "right": 70
+    },
+    {
+      "leaf": false,
+      "feature": 5,
+      "threshold": 0.5,
+      "left": 64,
+      "right": 67
+    },
+    {
+      "leaf": false,
+      "feature": 1,
+      "threshold": 3.5,
+      "left": 65,
+      "right": 66
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.9733333333333334,
+        0.02666666666666667
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.45,
+        0.55
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 6,
+      "threshold": 6.834745168685913,
+      "left": 68,
+      "right": 69
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.27941176470588236,
+        0.7205882352941176
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 1,
+      "threshold": 3.5,
+      "left": 71,
+      "right": 74
+    },
+    {
+      "leaf": false,
+      "feature": 5,
+      "threshold": 0.5,
+      "left": 72,
+      "right": 73
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.2147239263803681,
+        0.7852760736196319,
+        0.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.95662100456621,
+        0.04337899543378995
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 5,
+      "threshold": 0.5,
+      "left": 75,
+      "right": 76
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.39487179487179486,
+        0.6051282051282051
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 5,
+      "threshold": 0.5,
+      "left": 78,
+      "right": 85
+    },
+    {
+      "leaf": false,
+      "feature": 2,
+      "threshold": 2.5,
+      "left": 79,
+      "right": 82
+    },
+    {
+      "leaf": false,
+      "feature": 6,
+      "threshold": 5.815294027328491,
+      "left": 80,
+      "right": 81
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.3076923076923077,
+        0.6923076923076923
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 1,
+      "threshold": 3.5,
+      "left": 83,
+      "right": 84
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.9583333333333334,
+        0.041666666666666664
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 6,
+      "threshold": 6.029898166656494,
+      "left": 86,
+      "right": 89
+    },
+    {
+      "leaf": false,
+      "feature": 0,
+      "threshold": 5.5,
+      "left": 87,
+      "right": 88
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.47297297297297297,
+        0.527027027027027
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.025423728813559324,
+        0.9745762711864406
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 6,
+      "threshold": 6.81109356880188,
+      "left": 90,
+      "right": 91
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.09090909090909091,
+        0.9090909090909091
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 5,
+      "threshold": 0.5,
+      "left": 93,
+      "right": 106
+    },
+    {
+      "leaf": false,
+      "feature": 4,
+      "threshold": 0.6477471590042114,
+      "left": 94,
+      "right": 101
+    },
+    {
+      "leaf": false,
+      "feature": 2,
+      "threshold": 2.5,
+      "left": 95,
+      "right": 98
+    },
+    {
+      "leaf": false,
+      "feature": 6,
+      "threshold": 5.8704564571380615,
+      "left": 96,
+      "right": 97
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.37735849056603776,
+        0.6226415094339622
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 0,
+      "threshold": 7.5,
+      "left": 99,
+      "right": 100
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.9808917197452229,
+        0.01910828025477707
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.49107142857142855,
+        0.5089285714285714
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 6,
+      "threshold": 6.338181018829346,
+      "left": 102,
+      "right": 105
+    },
+    {
+      "leaf": false,
+      "feature": 8,
+      "threshold": 0.4910798519849777,
+      "left": 103,
+      "right": 104
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.4666666666666667,
+        0.5333333333333333
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 6,
+      "threshold": 6.98496413230896,
+      "left": 107,
+      "right": 114
+    },
+    {
+      "leaf": false,
+      "feature": 0,
+      "threshold": 5.5,
+      "left": 108,
+      "right": 111
+    },
+    {
+      "leaf": false,
+      "feature": 8,
+      "threshold": 0.6030753552913666,
+      "left": 109,
+      "right": 110
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.3880597014925373,
+        0.6119402985074627
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "leaf": false,
+      "feature": 0,
+      "threshold": 7.5,
+      "left": 112,
+      "right": 113
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.1079136690647482,
+        0.8920863309352518
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "leaf": true,
+      "probabilities": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  ]
+}
